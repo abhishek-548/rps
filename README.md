@@ -6,7 +6,7 @@
 
 ## Objective of our Bot
  * This is a game based website we will compete with pc.
- * It is a rock,paper,scissor game which is our favourite childhood game..
+ * It is a rock paper scissor game which is our favourite childhood game..
 ## Technologies Used
 * HTML,CSS,JS
 * Teachable Machine
