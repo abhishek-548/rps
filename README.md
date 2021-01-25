@@ -4,7 +4,7 @@
  * Vara Prasad ( 19pa1a0533 )
  * Gera Abhishek ( 19pa1a0548 )
 
-## Objective of our Bot
+## What the website is about
  * This is a game based website we will compete with pc.
  * It is a rock paper scissor game which is our favourite childhood game..
 ## Technologies Used
