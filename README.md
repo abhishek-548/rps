@@ -12,8 +12,14 @@
 [![CSS image](https://raw.githubusercontent.com/abhishek-548/webbot/main/css%20img.PNG)](https://www.w3schools.com/css/)
 [![Js image](https://raw.githubusercontent.com/abhishek-548/webbot/main/js%20img.PNG)](https://www.w3schools.com/js/)
 
+## Game Link :
+
+https://rockpapperseasor.chilakadevi.repl.co/
+
 
 ## Output images :
+
+![Output1](https://github.com/19PA1A0548/my/blob/master/repl.it%20-%20Google%20Chrome%2025-01-2021%2010_41_59.png?raw=true)
 
 ## Youtube Link :
 
