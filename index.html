@@ -1,1 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+<h1>Rock Papper <span id="Scissor">Scissor</span></h1>  
+<button id="start" type="button" onclick="init()">Start</button>
+</br>
+</br>
+<br>
 
+<div id="webcam-container"></div>
+<div id="array-values"></div>
+
+<div id ="zero"  ><img  id ="one" src="" height="200px" width="200px" ></div>
+<div ><button id="clickme"type="button" onclick="pcchance()">Click Me</button>      </div>
+<div id="pc-values"></div>
+<div id="pc-chance"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "https://teachablemachine.withgoogle.com/models/A0ugedPhl/";
+
+    let model, webcam, labelContainer, maxPredictions;
+
+    // Load the image model and setup the webcam
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // or files from your local hard drive
+        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const flip = true; // whether to flip the webcam
+        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append elements to the DOM
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+       
+    }
+
+    async function loop() {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+    var array=[];
+   var pc=0,user=0;
+    // run the webcam image through the image model
+   function pcchance(){
+      
+   var  li=["rock","papper","Scissor"];
+    var  z=li[Math.floor(Math.random()*3)];
+    document.getElementById("pc-chance").innerHTML=z;
+    if(z=="rock")
+   {
+     document.getElementById("one").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSApGkUsnptlGcIABx7kalLvNwIJnbnq_Y0qQ&usqp=CAU";
+   }
+   if(z=="papper")
+   {
+     document.getElementById("one").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuiAx6t6mn9uTZmzAxTaUjw99UV33kEaRz1g&usqp=CAU";
+   }
+   if(z=="Scissor")
+   {
+     document.getElementById("one").src="https://i.ytimg.com/vi/w83HV_L4AiU/maxresdefault.jpg";
+   }
+   }
+
+    // run the webcam image through the image model
+    async function predict() {
+        // predict can take in an image, video or canvas html element
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            //labelContainer.childNodes[i].innerHTML = classPrediction;
+
+            if ( prediction[i].probability.toFixed(2)==1.00)
+                    { 
+                    array[0]= prediction[i].className;
+                    
+                        
+                    }
+        }
+       if(array[0]=="nothing")
+        {
+          document.getElementById("array-values").innerHTML="user";
+        }
+    z= document.getElementById("pc-chance").innerHTML;
+   
+   
+   
+     if (array[0]=="rock"){
+       
+         
+       
+      document.getElementById("array-values").innerHTML=array[0];
+       if (z=="papper"){
+         document.getElementById("pc-values").innerHTML="Pc Won :-)";
+         pc++;
+       }
+       else if (z=="Scissor"){
+        document.getElementById("pc-values").innerHTML="You Won :-)";
+        user++;
+       }
+       else {
+         document.getElementById("pc-values").innerHTML="DRAW";
+       }
+        
+       
+        
+       // predict();
+     }
+     if (array[0]=="papper"){
+      
+       document.getElementById("array-values").innerHTML=array[0];
+        if (z=="rock"){
+         document.getElementById("pc-values").innerHTML="You Won :-)";
+         user++;
+       }
+       else if (z=="Scissor"){
+        document.getElementById("pc-values").innerHTML="Pc Won :-)";
+        pc++;
+       }
+       else{
+         document.getElementById("pc-values").innerHTML="DRAW";
+       }
+       
+      //  predict();
+     }
+     if (array[0]=="seasor"){
+         
+      document.getElementById("array-values").innerHTML=array[0];
+        if (z=="papper"){
+         document.getElementById("pc-values").innerHTML="You Won :-)";
+         user++;
+       }
+       else if (z=="rock"){
+        document.getElementById("pc-values").innerHTML="Pc Won :-)";
+        pc++;
+       }
+       else{
+         document.getElementById("pc-values").innerHTML="DRAW";
+       }
+       
+       
+       // predict();
+     }
+     
+        
+   
+    }
+   
+</script>
+
+  </body>
+</html>
