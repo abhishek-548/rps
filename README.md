@@ -10,6 +10,7 @@
 ## Technologies Used
 * HTML,CSS,JS
 * Teachable Machine
+
 [![HTML image](https://github.com/abhishek-548/webbot/blob/main/html%20img.PNG?raw=true)](https://www.w3schools.com/html/)
 [![CSS image](https://raw.githubusercontent.com/abhishek-548/webbot/main/css%20img.PNG)](https://www.w3schools.com/css/)
 [![Js image](https://raw.githubusercontent.com/abhishek-548/webbot/main/js%20img.PNG)](https://www.w3schools.com/js/)
