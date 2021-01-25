@@ -1,1 +1,94 @@
+body{
+background-color:#28B4E5;
+font-family: 'Grandstander', cursive;
 
+}
+button{
+ 
+ padding:10px; background-color:#00b894; color: white;
+ border-radius:5px;
+ border-color: #00b894;
+ width: 100px;
+ cursor: pointer;
+ font-family: 'Grandstander', cursive;
+ color:#1778F2;
+      animation-name: cchange;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+    
+    @keyframes cchange{
+      0%{color:#236475;}
+      10%{color:#F7F5FA;}
+      30%{color:white;}
+      50%{color:#236475;}
+      70%{color:orange;}
+      100%{color:yellow;}
+
+    }
+}
+#webcam-container{
+  margin-left: 500px;
+  
+}
+#array-values{
+  margin-left: 570px;
+    margin-right: -50px;
+    margin-top: 20px;
+}
+}
+#pleaseclick {
+    margin-top: 400px;
+
+}
+#zero{
+  margin-left: 500px;
+    margin-top: -100px;
+}
+  
+#pc-values{
+ margin-left: 600px;
+    margin-top: 90px;
+    
+    text-shadow: 5px 5px white;
+    font-size: 6rem;
+    color: #f6b93b;
+    
+}
+#one{
+ margin-top: -146px;
+    margin-left: 350px;
+}
+
+#pc-chance{
+  display: none;
+}
+h1{
+  text-align: center;
+  color: white;
+}
+#Scissor{
+ 
+      color:#1778F2;
+      animation-name: cchange;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+    }
+    @keyframes cchange{
+      0%{color:#236475;}
+      10%{color:#F7F5FA;}
+      30%{color:white;}
+      50%{color:#236475;}
+      70%{color:orange;}
+      100%{color:yellow;}
+    }
+#start{
+  margin-top: -40px
+}
+#clickme{
+  margin-left: 735px;
+  margin-top: 30px;
+}
+img{
+  border-color: #28B4E5;
+  border: none;
+}
